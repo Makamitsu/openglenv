@@ -31,30 +31,12 @@ public:
 
 };
 
-struct Entity {
-	int x, y;
-
-	void print() {
-		std::cout << x << ", " << y << std::endl;
-	}
-};
 
 int main()
 {
 	Log log;
 	log.setLogLevel(log.LogLevelInfo);
 
-	Entity e;
-	e.x = 1;
-	e.y = 2;
-
-	Entity e1;
-	e1.x = 3;
-	e1.y = 4;
-
-
-	e.print();
-	e1.print();
 
 	std::cin.get();
 }
