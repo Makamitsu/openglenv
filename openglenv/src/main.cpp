@@ -32,7 +32,7 @@ int main()
 	Log log;
 	log.setLogLevel(Log::LevelError);
 
-	log.info("Lel");
+	log.info("this logger class sucks");
 
 	std::cin.get();
 }
