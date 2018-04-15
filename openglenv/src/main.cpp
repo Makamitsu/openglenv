@@ -1,42 +1,38 @@
 #include <iostream>
 
-#define LOG(x) std::cout << x << std::endl;
-
 class Log {
 public:
-	const int LogLevelError = 0;
-	const int LogLevelWarning = 1;
-	const int LogLevelInfo = 2;
-
+	enum Level {
+		LevelError = 0,
+		LevelWarning,
+		LevelInfo
+	};
 private:
-	int m_logLevel;
+	Level m_logLevel;
 public:
-
-
-	void setLogLevel(int logLevel) {
+	void setLogLevel(Level logLevel) {
 		m_logLevel = logLevel;
 	}
 	void error(const char* message) {
-		if (m_logLevel >= LogLevelError)
+		if (m_logLevel >= LevelError)
 			std::cout << "[ERROR]: " << message << std::endl;
 	}
 	void warn(const char* message) {
-		if (m_logLevel >= LogLevelWarning)
+		if (m_logLevel >= LevelWarning)
 			std::cout << "[WARNING]: " << message << std::endl;
 	}
 	void info(const char* message) {
-		if (m_logLevel >= LogLevelInfo)
+		if (m_logLevel >= LevelInfo)
 			std::cout << "[INFO]: " << message << std::endl;
 	}
-
 };
-
 
 int main()
 {
 	Log log;
-	log.setLogLevel(log.LogLevelInfo);
+	log.setLogLevel(Log::LevelError);
 
+	log.info("Lel");
 
 	std::cin.get();
 }
